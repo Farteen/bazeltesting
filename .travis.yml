@@ -1,0 +1,6 @@
+before_install:
+  - type bazel >/dev/null 2>&1 || { echo >&2 "not found bazel and installing it"; brew install bazel; }
+osx_image: xcode8.3
+language: objective-c
+script:
+  - bazel build ios-app
